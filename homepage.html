@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>CampWays | In-Campus Navigation App</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="Team Name" content="CodePlay">
+	<meta name="Description" content="A web-application to navigate easily inside academic blocks of NMIT campus">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+         
+  <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+      
+  <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+  </script>
+
+</head>
+<body>
+<div class="z-depth-2">
+	<div class="header" style="border-bottom: 10px solid #b30c00">
+  		<h1 style="color:white; font-size:285%; font-family:Helvetica;">CampWays</h1>
+  		<p style="color:white; font-family:Helvetica">In-Campus Navigation Web-App</p>
+	</div>
+</div>
+
+<br><br><br>
+	<div class = "row">
+         <form class = "col s12">
+            <div class = "row">
+            <label>FROM:</label>
+               <select id="from">
+                  <option value = "" disabled selected>Select</option>
+                  <option value = "1">Library</option>
+                  <option value = "2">CAED Lab</option>
+                  <option value = "3">CCP Lab</option>
+               </select>               
+            </div>
+        </form>
+    </div>
+
+    <div class = "row">
+         <form class = "col s12">
+            <div class = "row">
+            <label>TO:</label>
+               <select id="to">
+                  <option value = "" disabled selected>Select</option>
+                  <option value = "1">Library</option>
+                  <option value = "2">CAED Lab</option>
+                  <option value = "3">CCP Lab</option>
+               </select>               
+            </div>
+        </form>
+    </div>
+
+    <div class="center">
+    	<a class="waves-effect waves-light btn-large green" onclick="logic()">GO</a>
+	</div>
+
+<style>
+img {
+  width: auto;        
+  height: auto;
+}
+</style>
+    <a href="http://www.nmit.ac.in/" target="_blank" title="Visit Website" alt="NMIT Logo"><img src="collegeLogo.jpg" class="center" width="400px" height="400px"></a>
+
+<script type="text/javascript">
+  var fromOption = document.getElementById("from");
+  var toOption = document.getElementById("to");
+  function logic(){
+    if((fromOption.value == "1" && toOption.value == "2") || (fromOption.value == "2" && toOption.value == "1")) {
+      window.location.href="libCaed.html";
+    }
+    else if((fromOption.value == "1" && toOption.value == "3") || (fromOption.value == "3" && toOption.value == "1")){
+      window.location.href="libCcp.html";
+    }
+    else if((fromOption.value == "2" && toOption.value == "3") || (fromOption.value == "3" && toOption.value == "2")){
+      window.location.href="ccpCaed.html";
+    }
+    else{
+      alert("Please select different FROM and TO locations");
+    }
+  
+  }
+
+</script>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
